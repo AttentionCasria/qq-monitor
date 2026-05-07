@@ -1,0 +1,15 @@
+account:
+  uin: 1759751014 # 机器人小号QQ
+  password: 'Yangshangzhi666' # 密码或留空扫码
+
+heartbeat:
+  enabled: false
+
+message:
+  post-format: array
+
+servers:
+  - ws:
+      host: 127.0.0.1
+      port: 8080
+      enable: true

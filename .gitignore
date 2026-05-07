@@ -1,0 +1,12 @@
+# Credentials & Settings
+settings.json
+
+# Environment
+.env
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.idea/
+.vscode/
