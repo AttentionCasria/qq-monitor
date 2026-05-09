@@ -1,5 +1,6 @@
 # Credentials & Settings
 settings.json
+config.yml
 
 # Environment
 .env
