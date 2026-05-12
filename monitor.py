@@ -40,7 +40,7 @@ async def listen():
                     if word in raw_msg:
                         sender = data.get("sender", {}).get("nickname", "未知")
                         notify_text = (
-                            f"[CQ:shake]【关键词触发通知】\n"
+                            f"[CQ:shake][CQ:poke,qq={ADMIN_QQ}]【关键词触发通知】\n"
                             f"群号：{group_id}\n"
                             f"发言人：{sender}\n"
                             f"触发词：{word}\n"
