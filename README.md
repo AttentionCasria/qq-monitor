@@ -95,38 +95,7 @@ pip install websockets
 回车等待安装完成。
 
 ### 3. 新建一个文本文件，改名成 `monitor.py`
-里面粘贴以下代码（记得把群号改成你的，如果你想监控多个群，用逗号分隔）：
-
-```python
-import asyncio
-import websockets
-import json
-
-# 配置
-WS_URL = "ws://127.0.0.1:8080"          # 刚刚 NapCat 里开的端口
-TARGET_GROUPS = [866065107]             # 你要监控的群号，改成你自己的
-
-async def listen():
-    async with websockets.connect(WS_URL) as ws:
-        print("已连接到 NapCat，开始监控群消息...")
-        while True:
-            msg = await ws.recv()
-            data = json.loads(msg)
-            # 只处理群消息
-            if data.get("message_type") == "group":
-                group_id = data.get("group_id")
-                raw_msg = data.get("raw_message", "")
-                user_id = data.get("sender", {}).get("user_id")
-                # 检测目标群
-                if group_id in TARGET_GROUPS:
-                    print(f"群 {group_id} 收到 {user_id} 的消息: {raw_msg}")
-                    # 关键词匹配
-                    if "收" in raw_msg:
-                        print(f"！！！注意：群 {group_id} 有人发了‘收’相关消息！！！")
-                        # 还能加上桌面弹窗（需要 Python 调用 win32api，可选）
-
-asyncio.run(listen())
-```
+里面拉取文件代码（记得把群号改成你的，如果你想监控多个群，用逗号分隔）：
 
 ### 4. 运行脚本
 回到命令提示符，`cd` 到脚本所在目录，输入：
