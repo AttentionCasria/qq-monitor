@@ -25,7 +25,7 @@
 
 ---
 
-## 🚀 三、安装 & 第一次启动
+## 🚀 三、安装 & 第一次启动  
 
 1. 把下载好的 `NapCat.Shell.Windows.OneKey.zip` **解压**到当前文件夹。
 2. 进入解压出来的文件夹，找到 `NapCatInstaller.exe`，双击运行。
